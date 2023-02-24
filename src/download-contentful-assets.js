@@ -58,6 +58,7 @@ const downloadContentfulAssets = async gatsbyFunctions => {
       const { contentful_id: id, node_locale: locale } = node;
       const remoteDataCacheKey = `contentful-asset-${id}-${locale}`
       const cacheRemoteData = await cache.get(remoteDataCacheKey)
+
       if (!node.file) {
         reporter.warn(`The asset with id: ${id}, contains no file.`)
         return Promise.resolve()
